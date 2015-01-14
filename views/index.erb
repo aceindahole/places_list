@@ -1,0 +1,23 @@
+<h1>Places</h1>
+
+<p>Places I've Been</p>
+
+<ul>
+  <% @places.each() do |place_contain| %>
+    <li><%= place_contain.place() %>, <%= place_contain.time() %></li>
+  <% end %>
+</ul>
+
+<!-- The embedded ruby tag above contains a loop with multiple values in the array. The comma separates the two called upon values (check app.rb) and will separate them in-line, making them look decent. -->
+
+<p>Where have you been?</p>
+
+<form action="/places" method="post">
+  <label for="place">Where you've traveled:</label>
+  <input id="place" name="place" type="text">
+
+  <label for="time">And when:</label>
+  <input id="time" name="time" type="text">
+
+  <button type="submit">Add place</button>
+</form>
